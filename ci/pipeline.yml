@@ -13,12 +13,14 @@ jobs:
   plan:
   - get: source-code
     trigger: true
-    - task: library
-      file: source-code/ci/tasks/library.yml
+  - task: library
+    file: source-code/ci/tasks/library.yml
 
 - name: build-foo-example
   plan:
   - get: source-code
+    passed:
+    - build-library
     trigger: true
-    - task: foo-service
-      file: source-code/ci/tasks/foo-service.yml
+  - task: foo-service
+    file: source-code/ci/tasks/foo-service.yml
