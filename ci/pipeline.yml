@@ -2,6 +2,7 @@ resources:
 
 - name: source-code
   type: git
+  check_every: 5s
   source:
     uri: https://github.com/altfatterz/concourse-cache-example.git
     branch: master
