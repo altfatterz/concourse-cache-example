@@ -1,0 +1,23 @@
+resources:
+
+- name: source-code
+  type: git
+  source:
+    uri: https://github.com/altfatterz/concourse-cache-example.git
+    branch: master
+
+jobs:
+
+- name: build-library
+  plan:
+  - get: source-code
+    trigger: true
+    - task: library
+      file: source-code/ci/tasks/library.yml
+
+- name: build-foo-example
+  plan:
+  - get: source-code
+    trigger: true
+    - task: foo-service
+      file: source-code/ci/tasks/foo-service.yml
