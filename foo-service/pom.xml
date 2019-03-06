@@ -47,4 +47,22 @@
         </plugins>
     </build>
 
+    <repositories>
+        <repository>
+            <id>myArtifactory</id>
+            <url>http://35.204.61.226/artifactory/example-repo-local/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <!-- mvn deploy -->
+    <distributionManagement>
+        <repository>
+            <id>myArtifactory</id>
+            <url>http://35.204.61.226/artifactory/example-repo-local/</url>
+        </repository>
+    </distributionManagement>
+
 </project>

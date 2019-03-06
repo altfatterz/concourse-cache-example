@@ -18,5 +18,12 @@
         <java.version>1.8</java.version>
     </properties>
 
+    <!-- mvn deploy -->
+    <distributionManagement>
+        <repository>
+            <id>myArtifactory</id>
+            <url>http://35.204.61.226/artifactory/example-repo-local/</url>
+        </repository>
+    </distributionManagement>
 
 </project>

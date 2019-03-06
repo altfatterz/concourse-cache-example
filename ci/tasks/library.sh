@@ -11,4 +11,4 @@ echo "Generating the /.m2 symbolic link for /maven cache"
 [[ -d "${M2_CACHE}" && ! -d "${M2_HOME}" ]] && ln -s "${M2_CACHE}" "${M2_HOME}"
 
 cd source-code/library
-./mvnw clean install
+./mvnw clean deploy
